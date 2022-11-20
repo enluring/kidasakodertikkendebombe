@@ -3,6 +3,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 input.onButtonPressed(Button.AB, function () {
     bombe = randint(10, 20)
+    basic.showNumber(bombe)
 })
 input.onGesture(Gesture.Shake, function () {
     if (bombe > 0) {
@@ -16,6 +17,7 @@ radio.setGroup(6)
 basic.forever(function () {
     if (bombe < 0) {
         basic.clearScreen()
+        basic.showNumber(bombe)
     }
     if (bombe == 0) {
         basic.showLeds(`
